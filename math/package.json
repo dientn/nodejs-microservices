@@ -1,0 +1,17 @@
+{
+  "name": "math",
+  "version": "1.0.0",
+  "description": "Math services for Docker example",
+  "main": "index.js",
+  "scripts": {
+    "dev": "moleculer-runner --repl --hot service.js",
+    "start": "node --inspect=0.0.0.0:9229 node_modules/moleculer/bin/moleculer-runner src/index.js",
+    "docker": "docker build -t moleculer-math ."
+  },
+  "keywords": [],
+  "author": "Dien Tran",
+  "license": "MIT",
+  "dependencies": {
+    "moleculer": "^0.13.11"
+  }
+}

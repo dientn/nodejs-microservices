@@ -1,0 +1,20 @@
+{
+  "name": "api-gateway",
+  "version": "1.0.0",
+  "description": "Api-Gateway for Docker example",
+  "main": "index.js",
+  "scripts": {
+    "dev": "moleculer-runner --repl --hot --config moleculer.dev.config.js",
+    "start": "nodemon src/index.js",
+    "docker": "docker build -t api-gateway ."
+  },
+  "keywords": [],
+  "author": "Dien Tran",
+  "license": "MIT",
+  "dependencies": {
+    "jsonwebtoken": "^8.5.1",
+    "moleculer": "^0.13.11",
+    "moleculer-console-tracer": "^0.2.2",
+    "moleculer-web": "^0.8.5"
+  }
+}

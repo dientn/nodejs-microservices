@@ -1,0 +1,46 @@
+version: "3.0"
+
+services:
+
+  api-gateway:
+    build:
+      context: ./api-gateway
+    image: node-gateway
+    container_name: node-gateway
+    volumes: 
+      - ./api-gateway/src:/app/src
+    env_file: ./api-gateway/.env
+    environment:
+      LOGLEVEL: "info"
+    restart: always
+    ports: 
+      - "80:3000"
+    command: /bin/sh -c "npm start"
+    # restart: always
+
+  client:
+    build:
+      context: ./client
+    container_name: node-client
+    image: node-client
+    volumes: 
+      - ./client/src:/app/src
+    env_file: ./client/.env
+    environment:
+      LOGLEVEL: "info"
+    command: /bin/sh -c "npm start"
+    # restart: always
+
+  math:
+    build:
+      context: ./math
+    image: node-math
+    container_name: node-math
+    volumes: 
+      - ./math/src:/app/src
+    env_file: ./math/.env
+    environment:
+      LOGLEVEL: "info"
+    command: /bin/sh -c "npm start"
+    # restart: always
+
